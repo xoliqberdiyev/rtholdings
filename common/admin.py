@@ -77,7 +77,7 @@ class NewsAdmin(admin.ModelAdmin):
 @admin.register(models.CustomerFeedback)
 class CustomerFeedbackAdmin(admin.ModelAdmin):
     fieldsets = (
-        (None, {"fields": ('user_image',)}),
+        (None, {"fields": ('user_image', 'rate')}),
         (_("Uzbek tilida"), {"fields": ("user_role_uz", 'user_full_name_uz', 'user_feedback_uz')}),
         (_("Ingliz tilida"), {"fields": ("user_role_en", 'user_full_name_en', 'user_feedback_en')}),
         (_("Rus tilida"), {"fields": ("user_role_ru", 'user_full_name_ru', 'user_feedback_ru')}),

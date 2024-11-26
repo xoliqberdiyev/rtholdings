@@ -51,10 +51,11 @@ class ProjectServiceListSerializer(serializers.ModelSerializer):
 
 
 class ProjectSerializer(serializers.ModelSerializer):
+    service_name = serializers.CharField(source='service.title')
     class Meta:
         model = models.Project
         fields = [
-            'id', 'name', 'image', 'link', 'service'
+            'id', 'name_uz', 'name_en', 'name_ru', 'name_ko' 'image', 'link', 'service', 'service_name'
         ]
 
 
