@@ -21,7 +21,7 @@ class Settings(BaseModel):
     youtube_link = models.URLField()
 
     def __str__(self):
-        return _('Settings RT Holding Company')
+        return 'Settings RT Holding Company'
 
     class Meta:
         verbose_name = _('Settings')
