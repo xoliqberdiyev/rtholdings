@@ -155,6 +155,7 @@ class Product(BaseModel):
     name = models.CharField(max_length=100)
     description = models.TextField()
     main_image = models.ImageField(upload_to='common/product/main-image/')
+    price = models.PositiveBigIntegerField(default=0)
 
     def __str__(self):
         return self.name

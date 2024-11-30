@@ -125,7 +125,7 @@ class ProductListSerializer(serializers.ModelSerializer):
         fields = [
             'id', 'name_uz', 'name_en', 'name_ru', 'name_ko',
             'description_uz', 'description_en', 'description_ru', 'description_ko',
-            'main_image', 'images'
+            'main_image', 'images', 'price'
         ]
 
     def get_images(self, obj):
