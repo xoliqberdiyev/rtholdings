@@ -106,7 +106,7 @@ class ProductMediaInline(admin.StackedInline):
 @admin.register(models.Product)
 class ProductAdmin(admin.ModelAdmin):
     fieldsets = (
-        (None, {'fields': ('main_image',)}),
+        (None, {'fields': ('main_image', 'price')}),
         (_("Uzbek tilida"), {'fields': ('name_uz', 'description_uz')}),
         (_("Ingliz tilida"), {'fields': ('name_en', 'description_en')}),
         (_("Rus tilida"), {'fields': ('name_ru', 'description_ru')}),
