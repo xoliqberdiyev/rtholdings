@@ -30,15 +30,15 @@ class SettingsAdmin(admin.ModelAdmin):
     inlines = [ContactPhoneInline]
 
 
-@admin.register(models.Banner)
-class BannerAdmin(admin.ModelAdmin):
-    fieldsets = (
-        (None, {"fields": ("banner", "type")}),
-        (_("Uzbek tilida"), {"fields": ("title_uz", "description_uz")}),
-        (_("Ingliz tilida"), {"fields": ("title_en", "description_en")}),
-        (_("Rus tilida"), {"fields": ("title_ru", "description_ru")}),
-        (_("Kores tilida"), {"fields": ("title_ko", "description_ko")}),
-    )
+# @admin.register(models.Banner)
+# class BannerAdmin(admin.ModelAdmin):
+#     fieldsets = (
+#         (None, {"fields": ("banner", "type")}),
+#         (_("Uzbek tilida"), {"fields": ("title_uz", "description_uz")}),
+#         (_("Ingliz tilida"), {"fields": ("title_en", "description_en")}),
+#         (_("Rus tilida"), {"fields": ("title_ru", "description_ru")}),
+#         (_("Kores tilida"), {"fields": ("title_ko", "description_ko")}),
+#     )
 
 
 @admin.register(models.Service)

@@ -4,7 +4,7 @@ from common import views
 
 urlpatterns = [
     path('settings/', views.SettingsApiView.as_view(), name='settings'),
-    path('banner/list/', views.BannerListApiView.as_view(), name='banner-list'),
+    # path('banner/list/', views.BannerListApiView.as_view(), name='banner-list'),
     path('service/list/', views.ServiceListApiView.as_view(), name='service-list'),
     path('service/<int:pk>/', views.ServiceDetailApiView.as_view(), name='service-detail'),
     path('project/list/', views.ProjectListApiView.as_view(), name='project-list'),
