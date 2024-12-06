@@ -7,18 +7,6 @@ from common import models
 
 admin.site.unregister(Group)
 
-class ProjectBannerInline(TranslationStackedInline):
-    model = models.ProjectBanner
-    extra = 0
-
-
-    def has_add_permission(self, request, obj=None):
-        try:
-            models.ProjectBanner.objects.get(project=obj)
-            return False
-        except models.ProjectBanner.DoesNotExist:
-            return True
-
 
 class ContactPhoneInline(admin.StackedInline):
     model = models.ContactPhoneNumber
@@ -54,7 +42,6 @@ class ServiceAdmin(admin.ModelAdmin):
 
 @admin.register(models.Project)
 class ProjectAdmin(admin.ModelAdmin):
-    inlines = [ProjectBannerInline]
     fieldsets = (
         (None, {'fields': ('image', 'service', 'link')}),
         (_("Uzbek tilida"), {"fields": ("name_uz", 'description_uz')}),

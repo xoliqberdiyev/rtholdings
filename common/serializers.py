@@ -59,17 +59,7 @@ class ProjectSerializer(serializers.ModelSerializer):
         ]
 
 
-class ProjectBannerSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = models.ProjectBanner
-        fields = [
-            'id', 'banner', 'title_uz', 'title_en', 'title_ru', 'title_ko',
-            'description_uz', 'description_en', 'description_ru', 'description_ko',
-        ]
-
-
 class ProjectDetailSerializer(serializers.ModelSerializer):
-    banner = serializers.SerializerMethodField(method_name='get_banner')
 
     class Meta:
         model = models.Project
@@ -77,11 +67,6 @@ class ProjectDetailSerializer(serializers.ModelSerializer):
             'id', 'name_uz', 'name_en', 'name_ru', 'name_ko', 'image', 'link', 'service', 'banner'
         ]
 
-    def get_banner(self, obj):
-        banner = models.ProjectBanner.objects.get(project=obj)
-        if banner:
-            return ProjectBannerSerializer(banner).data
-        return None
 
 class NewsSerializer(serializers.ModelSerializer):
     class Meta:
