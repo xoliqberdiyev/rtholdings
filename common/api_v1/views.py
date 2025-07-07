@@ -1,6 +1,8 @@
 from rest_framework import generics, status
 
-from common.api_v1 import serializers
+from django_filters.rest_framework.backends import DjangoFilterBackend
+
+from common.api_v1 import serializers, filters
 from common import models
 
 
@@ -34,4 +36,6 @@ class ContactUsCreateApiView(generics.CreateAPIView):
 class ProductListApiView(generics.ListAPIView):
     serializer_class = serializers.ProductListSerializer
     queryset = models.Product.objects.prefetch_related('product_images')
+    filter_backends = [DjangoFilterBackend]
+    filterset_class = filters.ProductFilter
 
