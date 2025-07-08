@@ -3,6 +3,11 @@ from modeltranslation.translator import TranslationOptions, register
 from common import models
 
 
+@register(models.OurActivityNumber)
+class OurActivityNumberTranslation(TranslationOptions):
+    fields = ['title']
+
+
 @register(models.ServiceType)
 class ServiceTypeTranslation(TranslationOptions):
     fields = ['title', 'description']

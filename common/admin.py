@@ -29,7 +29,7 @@ class ProductImageInline(admin.TabularInline):
 
 
 @admin.register(models.OurActivityNumber)
-class OurActivityNumberAdmin(admin.ModelAdmin):
+class OurActivityNumberAdmin(TranslationAdmin):
     list_display = ['id', 'number', 'title']
 
 

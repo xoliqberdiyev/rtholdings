@@ -6,7 +6,9 @@ from common import models
 class OurActivityNumberListSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.OurActivityNumber
-        fields = '__all__'
+        fields = [
+            'id', 'title_uz', 'title_ru', 'title_en', 'title_ko'
+        ]
 
 
 class ServiceListSerializer(serializers.ModelSerializer):
