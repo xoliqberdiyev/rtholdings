@@ -7,7 +7,7 @@ class OurActivityNumberListSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.OurActivityNumber
         fields = [
-            'id', 'title_uz', 'title_ru', 'title_en', 'title_ko'
+            'id', 'title_uz', 'title_ru', 'title_en', 'title_ko', 'number'
         ]
 
 
