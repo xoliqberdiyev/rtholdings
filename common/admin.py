@@ -10,6 +10,11 @@ from common import models
 admin.site.unregister(Group)
 
 
+class ServiceTypeLinkInline(admin.TabularInline):
+    model = models.ServiceTypeLink
+    extra = 0
+
+
 class NewsImageInline(admin.TabularInline):
     extra = 0
     model = models.NewsImage
@@ -43,6 +48,8 @@ class ServiceTypeAdmin(TranslationAdmin):
         (("Uzbek"), {"fields": ("title_uz", "description_uz")},),
         (("Korean"), {"fields": ("title_ko", "description_ko")},),
     )
+    inlines = [ServiceTypeLinkInline]
+
 
 @admin.register(models.Service)
 class ServiceAdmin(TranslationAdmin):

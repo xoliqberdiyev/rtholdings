@@ -36,6 +36,14 @@ class Service(BaseModel):
 
     def __str__(self):
         return f"{self.type.title} type - {self.title}"
+
+
+class ServiceTypeLink(BaseModel):
+    link = models.URLField()
+    service_type = models.ForeignKey(ServiceType, on_delete=models.CASCADE, related_name='service_type_links')
+
+    def __str__(self):
+        return self.link
     
 
 class News(BaseModel):

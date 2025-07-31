@@ -13,7 +13,7 @@ class OurActivityNumberListApiView(generics.ListAPIView):
 
 
 class ServiceTypeListApiView(generics.ListAPIView):
-    queryset = models.ServiceType.objects.prefetch_related('services')
+    queryset = models.ServiceType.objects.prefetch_related('services', 'service_type_links')
     serializer_class = serializers.ServiceTypeListSerializer
 
 
