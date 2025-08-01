@@ -3,16 +3,11 @@ from django.contrib.auth.models import Group
 from django.contrib.auth.admin import UserAdmin
 
 
-from modeltranslation.admin import TranslationAdmin, TranslationTabularInline, TranslationStackedInline
+from modeltranslation.admin import TranslationAdmin
 
 from common import models
 
 admin.site.unregister(Group)
-
-
-class ServiceTypeLinkInline(admin.TabularInline):
-    model = models.ServiceTypeLink
-    extra = 0
 
 
 class NewsImageInline(admin.TabularInline):
@@ -47,8 +42,8 @@ class ServiceTypeAdmin(TranslationAdmin):
         (("Russian"), {"fields": ("title_ru", "description_ru")},),
         (("Uzbek"), {"fields": ("title_uz", "description_uz")},),
         (("Korean"), {"fields": ("title_ko", "description_ko")},),
+        (("Links"), {"fields": ("instagram_link", "telegram_link", "youtube_link", "whatsup_link", "tiktok_link")})
     )
-    inlines = [ServiceTypeLinkInline]
 
 
 @admin.register(models.Service)

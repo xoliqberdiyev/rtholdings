@@ -25,10 +25,16 @@ class ServiceType(BaseModel):
     title = models.CharField(max_length=100)
     description = models.TextField()
     image = models.ImageField(upload_to="media/service/images/%Y/%m/")
+    instagram_link = models.URLField(null=True, blank=True)
+    telegram_link = models.URLField(null=True, blank=True)
+    youtube_link = models.URLField(null=True, blank=True)
+    whatsup_link = models.URLField(null=True, blank=True)
+    tiktok_link = models.URLField(null=True, blank=True)
 
     def __str__(self):
         return self.title
-    
+
+
 class Service(BaseModel):
     title = models.CharField(max_length=100)
     description = models.TextField()
@@ -37,14 +43,6 @@ class Service(BaseModel):
     def __str__(self):
         return f"{self.type.title} type - {self.title}"
 
-
-class ServiceTypeLink(BaseModel):
-    link = models.URLField()
-    service_type = models.ForeignKey(ServiceType, on_delete=models.CASCADE, related_name='service_type_links')
-
-    def __str__(self):
-        return self.link
-    
 
 class News(BaseModel):
     title = models.CharField(max_length=150)

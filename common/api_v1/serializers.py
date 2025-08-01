@@ -20,22 +20,14 @@ class ServiceListSerializer(serializers.ModelSerializer):
         ]
 
 
-class ServiceTypeLinkSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = models.ServiceTypeLink
-        fields = [
-            'id', 'link'
-        ]
-
 
 class ServiceTypeListSerializer(serializers.ModelSerializer):
     services = ServiceListSerializer(many=True)
-    service_type_links = ServiceTypeLinkSerializer(many=True)
 
     class Meta:
         model = models.ServiceType
         fields = [
-            'id', 'title_uz', 'title_ru', 'title_en', 'title_ko', 'description_uz', 'description_ru', 'description_en', 'description_ko', 'image', 'services', 'service_type_links'
+            'id', 'title_uz', 'title_ru', 'title_en', 'title_ko', 'description_uz', 'description_ru', 'description_en', 'description_ko', 'image', 'services', 'instagram_link', 'telegram_link', 'youtube_link', 'whatsup_link', 'tiktok_link'
         ]
 
 
