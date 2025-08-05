@@ -19,10 +19,13 @@ schema_view = get_schema_view(
       contact=openapi.Contact(email="contact@snippets.local"),
       license=openapi.License(name="BSD License"),
    ),
+   url="https://api.rtholdings.uz",
    public=True,
    permission_classes=(permissions.AllowAny,),
 )
-
+schema_view.servers = [
+    {"url": "https://api.rtholdings.uz", "description": "Secure Production Server"}
+]
 urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
     path('admin/', admin.site.urls),

@@ -211,7 +211,16 @@ CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",  # For local development
     "http://127.0.0.1:8000",  # If you're testing with local servers
+    "https://api.rtholdings.uz"
 ]
 
 CSRF_ALLOWED_ALL = True
 
+SPECTACULAR_SETTINGS = {
+    "TITLE": "My API",
+    "DESCRIPTION": "API documentation",
+    "VERSION": "1.0.0",
+    "SERVERS": [
+        {"url": "https://api.rtholdings.uz", "description": "Production server"},
+    ],
+}
