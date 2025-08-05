@@ -132,6 +132,11 @@ MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10,
+}
+
 JAZZMIN_SETTINGS = {
     "site_title": "RT Holding Admin",
     "site_header": "RT Holding",
@@ -189,11 +194,12 @@ LOCALE_PATHS = [
 CSRF_ALLOWED_ALL = True
 
 BASE_URL = env('BASE_URL')
-CSRF_TRUSTED_ORIGINS = [BASE_URL]
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_METHODS = ["*"]
 CORS_ALLOW_HEADERS = ["*"]
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 
 
 # Django Redis Config
