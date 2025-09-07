@@ -198,7 +198,7 @@ CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_METHODS = ["*"]
 CORS_ALLOW_HEADERS = ["*"]
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', env.str("SWAGGER_PROTOCOL"))
 
 
 
@@ -222,11 +222,3 @@ CORS_ALLOWED_ORIGINS = [
 
 CSRF_ALLOWED_ALL = True
 
-SPECTACULAR_SETTINGS = {
-    "TITLE": "My API",
-    "DESCRIPTION": "API documentation",
-    "VERSION": "1.0.0",
-    "SERVERS": [
-        {"url": "https://api.rtholdings.uz", "description": "Production server"},
-    ],
-}
