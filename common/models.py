@@ -25,6 +25,7 @@ class ServiceType(BaseModel):
     title = models.CharField(max_length=100)
     description = models.TextField()
     image = models.ImageField(upload_to="media/service/images/%Y/%m/")
+    banner = models.ImageField(upload_to='media/services/banners/%Y/%m/', null=True, blank=True)
     instagram_link = models.URLField(null=True, blank=True)
     telegram_link = models.URLField(null=True, blank=True)
     youtube_link = models.URLField(null=True, blank=True)

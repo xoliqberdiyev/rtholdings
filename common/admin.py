@@ -37,7 +37,7 @@ class OurActivityNumberAdmin(TranslationAdmin):
 class ServiceTypeAdmin(TranslationAdmin):
     list_display = ['id', 'title', 'description']
     fieldsets = (
-        (None, {"fields": ("image",)},),
+        (None, {"fields": ("image", 'banner')},),
         (("English"), {"fields": ("title_en", "description_en")},),
         (("Russian"), {"fields": ("title_ru", "description_ru")},),
         (("Uzbek"), {"fields": ("title_uz", "description_uz")},),
