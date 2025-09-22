@@ -42,7 +42,7 @@ class ServiceTypeAdmin(TranslationAdmin):
         (("Russian"), {"fields": ("title_ru", "description_ru")},),
         (("Uzbek"), {"fields": ("title_uz", "description_uz")},),
         (("Korean"), {"fields": ("title_ko", "description_ko")},),
-        (("Links"), {"fields": ("instagram_link", "telegram_link", "youtube_link", "whatsup_link", "tiktok_link")})
+        (("Links"), {"fields": ("instagram_link", "telegram_link", "youtube_link", "whatsup_link", "tiktok_link", 'facebook_link')})
     )
 
 

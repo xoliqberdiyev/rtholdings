@@ -30,6 +30,7 @@ class ServiceType(BaseModel):
     youtube_link = models.URLField(null=True, blank=True)
     whatsup_link = models.URLField(null=True, blank=True)
     tiktok_link = models.URLField(null=True, blank=True)
+    facebook_link = models.URLField(null=True, blank=True)
 
     def __str__(self):
         return self.title
