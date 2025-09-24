@@ -15,12 +15,6 @@ class NewsImageInline(admin.TabularInline):
     model = models.NewsImage
     fields = ['image']
 
-    def has_add_permission(self, request, obj=None):
-        if obj is None:
-            return True
-        count = models.NewsImage.objects.filter(news=obj).count()
-        return count < 5
-    
 
 class ProductImageInline(admin.TabularInline):
     extra = 0
