@@ -32,6 +32,9 @@ class ServiceType(BaseModel):
     whatsup_link = models.URLField(null=True, blank=True)
     tiktok_link = models.URLField(null=True, blank=True)
     facebook_link = models.URLField(null=True, blank=True)
+    phone_number = models.CharField(null=True, blank=True, max_length=20)
+    website_link = models.CharField(null=True, blank=True, max_length=200)
+    email_link = models.EmailField(null=True, blank=True)
 
     def __str__(self):
         return self.title
